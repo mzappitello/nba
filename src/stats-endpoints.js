@@ -27,6 +27,15 @@ module.exports = {
     transform: general,
   },
 
+  playerProfileV2: {
+    url: "http://stats.nba.com/stats/playerprofilev2",
+    defaults: {
+      "PlayerID": "0",
+      "PerMode": "PerGame"
+    },
+    transform: general
+  },
+
   playerInfo: {
     url: "http://stats.nba.com/stats/commonplayerinfo",
     defaults: {
