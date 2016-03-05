@@ -46,5 +46,6 @@
     "node-static": "^0.7.7",
     "openurl": "^1.1.0",
     "sinon": "^1.10.3"
-  }
+  },
+  "files": [ "src" ]
 }
