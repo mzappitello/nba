@@ -1,4 +1,7 @@
-const { general, player, base, lineups } = require("./transforms");
+const general = require("./transforms").general;
+const player = require("./transforms").player;
+const base = require("./transforms").base;
+const lineups = require("./transforms").lineups;
 
 var DEFAULT_SEASON = "2015-16";
 

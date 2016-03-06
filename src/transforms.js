@@ -1,10 +1,10 @@
+"use strict"
+
 const indexBy = require("lodash.indexby");
 
 const collectify = require("./util/collectify");
-const {
-  jsify,
-  downcaseFirst,
-} = require("./util/string");
+const jsify = require("./util/string").jsify;
+const downcaseFirst = require("./util/string").downcaseFirst;
 
 function base (resp) {
   var data = resp.resultSets[0];

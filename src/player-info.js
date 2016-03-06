@@ -11,7 +11,8 @@ module.exports = function (cb) {
 
 function makePlayer (tuple) {
   const playerId = tuple[0];
-  const [lastName, firstName] = tuple[1].split(", ");
+  const lastName = tuple[1].split(", ")[0];
+  const firstName = tuple[1].split(", ")[1];
   const teamId = tuple[7];
   return { firstName, lastName, playerId, teamId };
 }

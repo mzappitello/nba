@@ -1,3 +1,5 @@
+"use strict"
+
 const mergeCollections = require("./util/merge-collections");
 const blank = require("./util/blank");
 const stats = require("./stats");

@@ -1,3 +1,5 @@
+"use strict"
+
 function hasUnderscoreOrHyphen (str) {
   return str.indexOf("-") > -1 || str.indexOf("_") > -1;
 }

@@ -1,7 +1,9 @@
+"use strict"
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 const qs = require("querystring");
-
 const partial = require("lodash.partial");
-
 const endpoints = require("./stats-endpoints");
 const dicts = require("./dicts");
 const translateKeys = require("./util/translate-keys");
@@ -35,7 +37,7 @@ function makeStatsMethod (endpoint) {
       throw new TypeError("Must pass a callback function.");
     }
 
-    const params = {...endpoint.defaults, ...translate(query)};
+    var params = _extends({}, endpoint.defaults, translate(query));
 
     transport(endpoint.url, params, function (err, response) {
       if (err) return callback(err);

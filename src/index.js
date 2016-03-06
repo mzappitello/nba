@@ -1,3 +1,5 @@
+"use strict"
+
 const find = require("lodash.find");
 const contains = require("lodash.contains");
 const assign = require("lodash.assign");
@@ -9,10 +11,11 @@ const getPlayersInfo = require("./player-info");
 const sportVu = require("./sport-vu");
 const stats = require("./stats");
 const buildPlayers = require("./util/build-players");
-const {promisify, promisifyAll} = require("./util/promisify");
+const promisify = require("./util/promisify").promisify;
+const promisifyAll = require("./util/promisify").promisifyAll;
 
-const teams = require("../data/teams.json");
-const players = buildPlayers(require("../data/players.json"));
+const teams = require("./../data/teams.json");
+const players = buildPlayers(require("./../data/players.json"));
 
 const nba = {
   stats,

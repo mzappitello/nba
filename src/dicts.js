@@ -2,7 +2,17 @@ const blank = require("./util/blank");
 const invert = require("lodash.invert");
 
 const mapOfOnes = arr => arr.reduce((obj, k) => (obj[k] = 1, obj), {});
-const pipe = (...fns) => arg => fns.reduce((last, fn) => fn(last), arg);
+const pipe = function pipe() {
+  for (var _len = arguments.length, fns = Array(_len), _key = 0; _key < _len; _key++) {
+    fns[_key] = arguments[_key];
+  }
+
+  return function (arg) {
+    return fns.reduce(function (last, fn) {
+      return fn(last);
+    }, arg);
+  };
+};
 const nbaToJsMap = blank({
   "Season": "season",
   "SeasonType": "seasonType",

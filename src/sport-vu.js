@@ -1,4 +1,8 @@
-const {interpolate} = require("./util/string");
+"use strict"
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+const interpolate = require("./util/string").interpolate;
 const endpoints = require("./sport-vu-endpoints");
 
 let transport = require("./get-json");
@@ -30,7 +34,7 @@ function makeSportVuMethod (endpoint) {
       throw new TypeError("Must pass a callback function.");
     }
 
-    options = {...endpoint.defaults, ...options};
+    options = _extends({}, endpoint.defaults, options);
 
     transport(makeUrl(options), {}, callback);
   };
