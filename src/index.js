@@ -28,6 +28,7 @@ const nba = {
   teamIdFromName,
   playerIdFromName,
   findPlayer,
+  findPlayers,
   searchPlayers,
   usePromises,
 
@@ -59,6 +60,18 @@ function findPlayer (str) {
   return find(nba.players, function (p) {
     return contains(p.fullName.toLowerCase(), str);
   });
+}
+
+function findPlayers (str) {
+  str = str.toLowerCase();
+  var players = [];
+  for (id in nba.players) {
+    var p = nba.players[id];
+    if contains(p.fullName.toLowerCase, str) {
+      players.push(p);
+    }
+  }
+  return players;
 }
 
 function searchPlayers (str) {
